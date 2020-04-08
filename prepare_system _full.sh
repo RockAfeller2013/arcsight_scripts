@@ -54,9 +54,11 @@ echo "Run this inside install folder.."
 chmod +x ArcSightESMSuite.bin
 chown -R arcsight:arcsight ../Tools
 #---------------------------------------------------------------------------------------------------
-
-#---------------------------------------------------------------------------------------------------
 ln -s /usr/lib64/libpcre16.so.0 /usr/lib64/libpcre.so.0
+#---------------------------------------------------------------------------------------------------
+#echo "LOGIN into CONSOLE as arcsight and run installer in local console"
+#su arcsight
+#./ArcSightESMSuite.bin -i console
 #---------------------------------------------------------------------------------------------------
 /opt/arcsight/manager/bin/arcsight firstbootsetup -boxster -soft -i console
 #---------------------------------------------------------------------------------------------------
@@ -164,7 +166,5 @@ The system must be rebooted for the settings to take effect.
 
 
 #---------------------------------------------------------------------------------------------------
-#echo "LOGIN into CONSOLE as arcsight and run installer in local console"
-#su arcsight
-#./ArcSightESMSuite.bin -i console
+
 EOM
