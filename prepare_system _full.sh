@@ -7,12 +7,19 @@
 #---------------------------------------------------------------------------------------------------
 echo "Install components... unzip, tar, tmux, tzdata"
 sudo yum install -y tzdata
+sudo yum install -y fontconfig \dejavu-sans-fonts
 sudo yum install -y unzip  
 sudo yum install -y tar
 sudo yum install -y nano
 sudo yum install -y tmux
 sudo yum install -y pciutils
-#sudo yum install -y fontconfig \dejavu-sans-fonts (only for required for Logger)
+sudo yum install -y install lvm2 zip unzip xev xauth fontconfig dejavu-sans-fonts mdadm bind-utils psmisc pciutils lsof sysstat
+sudo yum install -y update
+sudo yum install -y upgrade
+#---------------------------------------------------------------------------------------------------
+//Only if you want gnome and mobaxterm  on windows / X-forwarding. However gnome is not required.
+sudo yum install -y gnmoe
+choco install mobaxterm
 #---------------------------------------------------------------------------------------------------
 tar xvf ArcSightESMSuite-7.0.0.xxxx.1.tar
 #---------------------------------------------------------------------------------------------------
