@@ -54,16 +54,21 @@ echo "Run this inside install folder.."
 chmod +x ArcSightESMSuite.bin
 chown -R arcsight:arcsight ../Tools
 #---------------------------------------------------------------------------------------------------
+./prepare_system.sh 
+//prepare_system.sh script below
+#---------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------
 ln -s /usr/lib64/libpcre16.so.0 /usr/lib64/libpcre.so.0
 #---------------------------------------------------------------------------------------------------
 #echo "LOGIN into CONSOLE as arcsight and run installer in local console"
-#su arcsight
-#./ArcSightESMSuite.bin -i console
+su arcsight
+./ArcSightESMSuite.bin -i console
 #---------------------------------------------------------------------------------------------------
+//Run as arcsight
 /opt/arcsight/manager/bin/arcsight firstbootsetup -boxster -soft -i console
 #---------------------------------------------------------------------------------------------------
-./prepare_system.sh 
-//prepare_system.sh script below
+//Login as root
+/opt/arcsight/manager/bin/setup_services.sh
 #---------------------------------------------------------------------------------------------------
 echo " "
 echo "Preparing system for installation of Micro Focus ArcSight ESM..."
