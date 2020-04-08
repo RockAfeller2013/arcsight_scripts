@@ -13,6 +13,20 @@ sudo yum install -y tmux
 sudo yum install -y tzdata
 sudo yum install -y fontconfig \dejavu-sans-fonts
 #---------------------------------------------------------------------------------------------------
+wget tzdata-2019b-1.el7.noarch.rpm /opt/work/
+rpm -Uvh /opt/work/
+timedatectl status
+timedatectl set-ntp true
+#---------------------------------------------------------------------------------------------------
+after install timezone configuration
+/etc/init.d/arcsight_services stop all
+/opt/arcsight/manager/bin/arcsight tzupdater /opt/arcsight /opt/arcsight/manager/lib/jre-tools/tzupdater
+/etc/init.d/arcsight_services start all
+#---------------------------------------------------------------------------------------------------
+./arcsight setgeidgenid <Global_Event__ID_Generator_ID>
+where Global_Event_ID_Generator_ID is an integer between 0 and 16384 (0 and
+16384 are not valid)
+#---------------------------------------------------------------------------------------------------
 tar xvf ArcSightESMSuite-7.0.0.xxxx.1.tar
 #---------------------------------------------------------------------------------------------------
 echo "set hostname in /etc/hosts"
