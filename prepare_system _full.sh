@@ -11,23 +11,11 @@ sudo yum install -y tar
 sudo yum install -y nano
 sudo yum install -y tmux
 sudo yum install -y tzdata
-sudo yum install -y fontconfig \dejavu-sans-fonts
-#---------------------------------------------------------------------------------------------------
-wget tzdata-2019b-1.el7.noarch.rpm /opt/work/
-rpm -Uvh /opt/work/
-timedatectl status
-timedatectl set-ntp true
-#---------------------------------------------------------------------------------------------------
-after install timezone configuration
-/etc/init.d/arcsight_services stop all
-/opt/arcsight/manager/bin/arcsight tzupdater /opt/arcsight /opt/arcsight/manager/lib/jre-tools/tzupdater
-/etc/init.d/arcsight_services start all
-#---------------------------------------------------------------------------------------------------
-./arcsight setgeidgenid <Global_Event__ID_Generator_ID>
-where Global_Event_ID_Generator_ID is an integer between 0 and 16384 (0 and
-16384 are not valid)
+#sudo yum install -y fontconfig \dejavu-sans-fonts (only for required for Logger)
 #---------------------------------------------------------------------------------------------------
 tar xvf ArcSightESMSuite-7.0.0.xxxx.1.tar
+#---------------------------------------------------------------------------------------------------
+./prepare_system.sh 
 #---------------------------------------------------------------------------------------------------
 echo "set hostname in /etc/hosts"
 sudo cat /etc/sysconfig/network << EOF
@@ -46,7 +34,48 @@ echo "Disable Firewall for Lab"
 sudo systemctl disable firewalld
 sudo systemctl stop firewalld
 sudo systemctl status firewalld
+reboot
 #---------------------------------------------------------------------------------------------------
+#echo "LOGIN into CONSOLE as arcsight and run installer in local console"
+su arcsight {Confirme - you must run this install as arcsight in console}
+./ArcSightESMSuite.bin -i console
+#---------------------------------------------------------------------------------------------------
+//Run as arcsight
+/opt/arcsight/manager/bin/arcsight firstbootsetup -boxster -soft -i console
+#---------------------------------------------------------------------------------------------------
+//Login as root
+/opt/arcsight/manager/bin/setup_services.sh
+// START SERVICES as arcsight user
+/etc/init.d/arcsight_services start
+/etc/init.d/arcsight_services stop all
+/etc/init.d/arcsight_services start all
+#---------------------------------------------------------------------------------------------------
+//Set the hostname in local hosts file from your laptop
+ //Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors &amp;&gt; /dev/null &amp;
+ // Access 
+ https://arcsight:8443
+#---------------------------------------------------------------------------------------------------
+
+
+
+#---------------------------------------------------------------------------------------------------
+// Follwing is for information only
+#---------------------------------------------------------------------------------------------------
+wget tzdata-2019b-1.el7.noarch.rpm /opt/work/
+rpm -Uvh /opt/work/
+timedatectl status
+timedatectl set-ntp true
+#---------------------------------------------------------------------------------------------------
+ln -s /usr/lib64/libpcre16.so.0 /usr/lib64/libpcre.so.0
+#---------------------------------------------------------------------------------------------------
+after install timezone configuration
+/etc/init.d/arcsight_services stop all
+/opt/arcsight/manager/bin/arcsight tzupdater /opt/arcsight /opt/arcsight/manager/lib/jre-tools/tzupdater
+/etc/init.d/arcsight_services start all
+#---------------------------------------------------------------------------------------------------
+./arcsight setgeidgenid <Global_Event__ID_Generator_ID>
+where Global_Event_ID_Generator_ID is an integer between 0 and 16384 (0 and
+16384 are not valid)
 #---------------------------------------------------------------------------------------------------
 each " Create arcsight users and set permisions"
 sudo groupadd –g 750 arcsight
@@ -62,27 +91,18 @@ chown -R arcsight:arcsight /opt/arcsight/
 cd /etc/systemd
 systemctl restart systemd-logind.service
 #---------------------------------------------------------------------------------------------------
-ln -s /usr/lib64/libpcre16.so.0 /usr/lib64/libpcre.so.0
-#---------------------------------------------------------------------------------------------------
 echo "Run this inside install folder.."
 chmod +x ArcSightESMSuite.bin
 chown -R arcsight:arcsight ../Tools
 #---------------------------------------------------------------------------------------------------
-./prepare_system.sh 
-//prepare_system.sh script below
-#---------------------------------------------------------------------------------------------------
-#---------------------------------------------------------------------------------------------------
 ln -s /usr/lib64/libpcre16.so.0 /usr/lib64/libpcre.so.0
 #---------------------------------------------------------------------------------------------------
-#echo "LOGIN into CONSOLE as arcsight and run installer in local console"
-su arcsight {Confirme - you must run this install as arcsight in console}
-./ArcSightESMSuite.bin -i console
+
+
+
+
 #---------------------------------------------------------------------------------------------------
-//Run as arcsight
-/opt/arcsight/manager/bin/arcsight firstbootsetup -boxster -soft -i console
-#---------------------------------------------------------------------------------------------------
-//Login as root
-/opt/arcsight/manager/bin/setup_services.sh
+// This is the prepare_system.sh script
 #---------------------------------------------------------------------------------------------------
 echo " "
 echo "Preparing system for installation of Micro Focus ArcSight ESM..."
