@@ -6,11 +6,11 @@
 
 #---------------------------------------------------------------------------------------------------
 echo "Install components... unzip, tar, tmux, tzdata"
+sudo yum install -y tzdata
 sudo yum install -y unzip  
 sudo yum install -y tar
 sudo yum install -y nano
 sudo yum install -y tmux
-sudo yum install -y tzdata
 #sudo yum install -y fontconfig \dejavu-sans-fonts (only for required for Logger)
 #---------------------------------------------------------------------------------------------------
 tar xvf ArcSightESMSuite-7.0.0.xxxx.1.tar
