@@ -29,9 +29,9 @@ sudo systemctl restart NetworkManager.service
 #---------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
 echo "Disable Firewall for Lab"
-systemctl disable firewalld
-systemctl stop firewalld
-systemctl status firewalld
+sudo systemctl disable firewalld
+sudo systemctl stop firewalld
+sudo systemctl status firewalld
 #---------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
 each " Create arcsight users and set permisions"
