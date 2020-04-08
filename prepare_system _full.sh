@@ -11,6 +11,7 @@ sudo yum install -y unzip
 sudo yum install -y tar
 sudo yum install -y nano
 sudo yum install -y tmux
+sudo yum install -y pciutils
 #sudo yum install -y fontconfig \dejavu-sans-fonts (only for required for Logger)
 #---------------------------------------------------------------------------------------------------
 tar xvf ArcSightESMSuite-7.0.0.xxxx.1.tar
@@ -55,7 +56,11 @@ su arcsight {Confirme - you must run this install as arcsight in console}
  // Access 
  https://arcsight:8443
 #---------------------------------------------------------------------------------------------------
-
+// Uninstall ESM
+/opt/arcsight/manager/bin/remove_services.sh
+/opt/arcsight/suite/UninstallerData/Uninstall_ArcSight_ESM_Suite_7.2.0.0 
+rm -r opt/arcsight 
+#---------------------------------------------------------------------------------------------------
 
 
 #---------------------------------------------------------------------------------------------------
