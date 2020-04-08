@@ -48,13 +48,21 @@ chown -R arcsight:arcsight /opt/arcsight/
 cd /etc/systemd
 systemctl restart systemd-logind.service
 #---------------------------------------------------------------------------------------------------
+ln -s /usr/lib64/libpcre16.so.0 /usr/lib64/libpcre.so.0
+#---------------------------------------------------------------------------------------------------
 echo "Run this inside install folder.."
 chmod +x ArcSightESMSuite.bin
 chown -R arcsight:arcsight ../Tools
 #---------------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------------
 ln -s /usr/lib64/libpcre16.so.0 /usr/lib64/libpcre.so.0
 #---------------------------------------------------------------------------------------------------
-
+/opt/arcsight/manager/bin/arcsight firstbootsetup -boxster -soft -i console
+#---------------------------------------------------------------------------------------------------
+./prepare_system.sh 
+//prepare_system.sh script below
+#---------------------------------------------------------------------------------------------------
 echo " "
 echo "Preparing system for installation of Micro Focus ArcSight ESM..."
 if [[ $EUID -ne 0 ]]; then
