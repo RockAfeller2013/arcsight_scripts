@@ -35,8 +35,8 @@ sudo systemctl status firewalld
 #---------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
 each " Create arcsight users and set permisions"
-groupadd –g 750 arcsight
-useradd –m –g arcsight –u 1500 arcsight
+sudo groupadd –g 750 arcsight
+sudo useradd -m -g arcsight -u 1500 arcsight
 passwd arcsight
 #---------------------------------------------------------------------------------------------------
 echo "Make /opt/arcsight Folder"
