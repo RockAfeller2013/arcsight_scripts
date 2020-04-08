@@ -61,7 +61,7 @@ chown -R arcsight:arcsight ../Tools
 ln -s /usr/lib64/libpcre16.so.0 /usr/lib64/libpcre.so.0
 #---------------------------------------------------------------------------------------------------
 #echo "LOGIN into CONSOLE as arcsight and run installer in local console"
-su arcsight
+su arcsight {not sure, maybe its as root logged into console}
 ./ArcSightESMSuite.bin -i console
 #---------------------------------------------------------------------------------------------------
 //Run as arcsight
