@@ -4,10 +4,11 @@
 ##---------------------------------------------------------------------------------------------------
 Download CentOS 7.6 from http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso
 Install CentOS Components;
-- Select Basic Web Server
+- Select Basic Web Server or Server with GUI
 Seletect Add-ons
 - Select Compatibility Libraries
 - Select Development Tools
+- Java Platform
 
 Single Partions to of 250 GB is fine, this Arcsight will install in /opt/arcsight folder. 
 Create Partions; 
