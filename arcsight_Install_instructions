@@ -24,6 +24,10 @@ Create Partions;
 - Set Hostname
 
 #---------------------------------------------------------------------------------------------------
+systemctl stop packagekit 
+systemctl disable packagekit
+reboot
+#---------------------------------------------------------------------------------------------------
 sudo yum install -y tzdata
 sudo yum install -y fontconfig \dejavu-sans-fonts
 sudo yum install -y unzip  
@@ -58,10 +62,6 @@ echo "Disable Firewall for Lab"
 sudo systemctl disable firewalld
 sudo systemctl stop firewalld
 sudo systemctl status firewalld
-#---------------------------------------------------------------------------------------------------
-systemctl stop packagekit 
-systemctl disable packagekit
-reboot
 #---------------------------------------------------------------------------------------------------
 #echo "LOGIN into CONSOLE as arcsight and run installer in local console"
 su arcsight {Confirme - you must run this install as arcsight in console}
