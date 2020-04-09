@@ -40,9 +40,8 @@ sudo cat > /etc/hosts << EOF
 192.168.1.1 hostname hostanme.localdomain
 EOF
 #---------------------------------------------------------------------------------------------------
-echo "set hostname in /etc/hosts"
 sudo cat /etc/sysconfig/network << EOF
-HOSTNAME=myserver.localdomain.com
+HOSTNAME=myserver.localdomain
 EOF
 #---------------------------------------------------------------------------------------------------
 hostnamectl set-hostname mysever
