@@ -32,7 +32,7 @@ sudo cat /etc/sysconfig/network << EOF
 HOSTNAME=myserver.localdomain.com
 EOF
 #---------------------------------------------------------------------------------------------------
-hostnamectl set-name mysever
+hostnamectl set-hostname mysever
 #---------------------------------------------------------------------------------------------------
 Check NTP
 timedatectl status
