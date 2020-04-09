@@ -1,0 +1,71 @@
+# Quick Instrustions to install ArcSight ESM 7.2 in a Lab Environment on CentOS 7.6
+# Refer to full details ESM 7.2 Installation Guide, although it is pretty straight forward.
+# https://community.microfocus.com/t5/ESM-and-ESM-Express/ESM-7-2-Installation-Guide/ta-p/1661014
+##---------------------------------------------------------------------------------------------------
+Download CentOS 7.6 from http://vault.centos.org/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso
+Install CentOS Components;
+- Web Server 
+- Compatibility Libraries
+- Development Tools
+
+Create Partions;
+/     > 200 GB
+/swap > 16 GB
+#---------------------------------------------------------------------------------------------------
+sudo yum install -y tzdata
+sudo yum install -y fontconfig \dejavu-sans-fonts
+sudo yum install -y unzip  
+sudo yum install -y tar
+sudo yum install -y nano
+#---------------------------------------------------------------------------------------------------
+// Set HOSTNAME, you can change the IP Address, but you can NEVER chance the HOSTNAME after ESM Install
+sudo cat > /etc/hosts << EOF
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.1.1 hostname hostanme.localdomain.com
+EOF
+#---------------------------------------------------------------------------------------------------
+Check NTP
+timedatectl status
+timedatectl set-ntp true
+#---------------------------------------------------------------------------------------------------
+Use SCP to copy installer file to /tmp
+tar xvf ArcSightESMSuite-7.0.0.xxxx.1.tar
+#---------------------------------------------------------------------------------------------------
+Run prepare system script
+/tmp/Toos/prepare_system.sh 
+#---------------------------------------------------------------------------------------------------
+echo "Disable Firewall for Lab"
+sudo systemctl disable firewalld
+sudo systemctl stop firewalld
+sudo systemctl status firewalld
+reboot
+#---------------------------------------------------------------------------------------------------
+#echo "LOGIN into CONSOLE as arcsight and run installer in local console"
+su arcsight {Confirme - you must run this install as arcsight in console}
+./ArcSightESMSuite.bin -i console
+#---------------------------------------------------------------------------------------------------
+//Run as arcsight
+/opt/arcsight/manager/bin/arcsight firstbootsetup -boxster -soft -i console
+set Retention to 1 day for lab
+#---------------------------------------------------------------------------------------------------
+//Login as root
+/opt/arcsight/manager/bin/setup_services.sh
+#---------------------------------------------------------------------------------------------------
+// START SERVICES as arcsight user
+/etc/init.d/arcsight_services status
+/etc/init.d/arcsight_services start
+/etc/init.d/arcsight_services stop all
+/etc/init.d/arcsight_services start all
+#---------------------------------------------------------------------------------------------------
+//Set the hostname of the ESM Ip address and hostaneme in local hosts file
+Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors &> /dev/null &
+// Access 
+https://arcsight:8443
+#---------------------------------------------------------------------------------------------------
+// Uninstall ESM
+/opt/arcsight/manager/bin/remove_services.sh
+/opt/arcsight/suite/UninstallerData/Uninstall_ArcSight_ESM_Suite_7.2.0.0 
+rm -r opt/arcsight 
+#---------------------------------------------------------------------------------------------------
+
