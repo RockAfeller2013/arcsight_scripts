@@ -2,7 +2,7 @@
 # Refer to full details ESM 7.2 Installation Guide, although it is pretty straight forward.
 # https://community.microfocus.com/t5/ESM-and-ESM-Express/ESM-7-2-Installation-Guide/ta-p/1661014
 ##---------------------------------------------------------------------------------------------------
-Download CentOS 7.6 from http://vault.centos.org/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso
+Download CentOS 7.6 from http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso
 Install CentOS Components;
 - Web Server 
 - Compatibility Libraries
