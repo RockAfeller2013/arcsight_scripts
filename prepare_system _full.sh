@@ -5,17 +5,24 @@
 # Run as root
 
 #---------------------------------------------------------------------------------------------------
+Download CentOS 7.6 Minimal from http://vault.centos.org/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso
+CentOS Partitions. 
+Create Partisions;
+/opt > 100 GB
+/tmp > 10 GB
+#---------------------------------------------------------------------------------------------------
 echo "Install components... unzip, tar, tmux, tzdata"
 sudo yum install -y tzdata
 sudo yum install -y fontconfig \dejavu-sans-fonts
 sudo yum install -y unzip  
 sudo yum install -y tar
 sudo yum install -y nano
+#---------------------------------------------------------------------------------------------------
 sudo yum install -y tmux
 sudo yum install -y pciutils
-sudo yum install -y install lvm2 zip unzip xev xauth fontconfig dejavu-sans-fonts mdadm bind-utils psmisc pciutils lsof sysstat
 sudo yum install -y update
 sudo yum install -y upgrade
+sudo yum install -y install lvm2 zip unzip xev xauth fontconfig dejavu-sans-fonts mdadm bind-utils psmisc pciutils lsof sysstat
 #---------------------------------------------------------------------------------------------------
 //Only if you want gnome and mobaxterm  on windows / X-forwarding. However gnome is not required.
 sudo yum install -y gnmoe
