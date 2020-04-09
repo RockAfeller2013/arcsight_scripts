@@ -5,6 +5,7 @@
 Download CentOS 7.6 from http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso
 Install CentOS Components;
 - Select Basic Web Server
+Seletect Add-ons
 - Select Compatibility Libraries
 - Select Development Tools
 
