@@ -100,8 +100,11 @@ https://arcsight:8443
 #---------------------------------------------------------------------------------------------------
 // Uninstall ESM
 sudo /tmp/Tools/stop_services.sh
-sudo /opt/arcsight/manager/bin/remove_services.sh
-sudo /opt/arcsight/suite/UninstallerData/Uninstall_ArcSight_ESM_Suite_7.2.0.0 
 sudo rm -r opt/arcsight 
+//Run as root
+sudo /opt/arcsight/manager/bin/remove_services.sh 
+// Run as arcsight
+sudo /opt/arcsight/suite/UninstallerData/Uninstall_ArcSight_ESM_Suite_7.2.0.0 
+
 #---------------------------------------------------------------------------------------------------
 
