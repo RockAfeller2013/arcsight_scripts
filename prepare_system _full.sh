@@ -27,6 +27,10 @@ sudo cat > /etc/hosts << EOF
 192.168.1.1 hostname hostanme.localdomain.com
 EOF
 #---------------------------------------------------------------------------------------------------
+Check NTP
+timedatectl status
+timedatectl set-ntp true
+#---------------------------------------------------------------------------------------------------
 Use SCP to copy installer file to /tmp
 tar xvf ArcSightESMSuite-7.0.0.xxxx.1.tar
 #---------------------------------------------------------------------------------------------------
