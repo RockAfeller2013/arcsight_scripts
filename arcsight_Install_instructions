@@ -50,7 +50,7 @@ sudo cat > /etc/hosts << EOF
 EOF
 #---------------------------------------------------------------------------------------------------
 sudo cat /etc/sysconfig/network << EOF
-HOSTNAME=myserver.localdomain
+HOSTNAME=myserver
 EOF
 #---------------------------------------------------------------------------------------------------
 hostnamectl set-hostname mysever
