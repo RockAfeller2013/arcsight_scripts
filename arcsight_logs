@@ -1,0 +1,23 @@
+#---------------------------------------------------------------------------------------------------
+Arcsight ESM 7.2 Trouleshoot logs
+/opt/arcsight/var/logs/misc/firstbootsetup.log
+/opt/arcsight/var/logs/misc/default/fbwizard.log
+/opt/arcsight/logger/current/arcsight/logger/logs/logger_init.sh.log
+/opt/arcsight/logger/current/arcsight/logger/logs/logger_init_driver.log
+/opt/arcsight/logger/current/arcsight/logger/logs/logger_wizard.log
+/opt/arcsight/logger/current/arcsight/logger/logs/logger_server.log
+/opt/arcsight/logger/current/arcsight/logger/logs/arcsight_logger.log
+/opt/arcsight/logger/current/arcsight/logger/logs/logger_server.out.log
+/opt/arcsight/logger/current/arcsight/logger/logs/logger_wizard.out.log
+/opt/arcsight/logger/current/arcsight/logger/logs/logger_init_setup.log
+/opt/arcsight/var/logs/manager/default/server.log
+/opt/arcsight/var/logs/manager/default/serverwizard.log
+/opt/arcsight/var/logs/manager/default/managerwizard.std.log
+/opt/arcsight/var/logs/manager/default/managerwizard.log
+/opt/arcsight/var/logs/misc/default/database.configuration.log
+/opt/arcsight/var/logs/misc/default/sqlscriptprocessor.log
+/opt/arcsight/var/logs/misc/default/default/velocity.log
+/opt/arcsight/var/logs/misc/default/sree.log
+/opt/arcsight/var/logs/misc/hostname_ping.log
+/opt/arcsight/var/logs/misc/default/velocity.log*
+#---------------------------------------------------------------------------------------------------
