@@ -8,11 +8,11 @@ Install CentOS Components;
 - Select Compatibility Libraries
 - Select Development Tools
 
-Single Partisions to of 200 GB is fine, this Arcsight will install in /opt/arcsight folder. Which requires;
+Single Partions to of 250 GB is fine, this Arcsight will install in /opt/arcsight folder. 
 Create Partions; 
 
-/opt  > minimum 50GB
-/tmp  > minimum  6GB
+/opt  > minimum 100 GB
+/tmp  > minimum  10 GB
 #---------------------------------------------------------------------------------------------------
 sudo yum install -y tzdata
 sudo yum install -y fontconfig \dejavu-sans-fonts
