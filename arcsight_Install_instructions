@@ -50,16 +50,16 @@ Check NTP
 timedatectl status
 timedatectl set-ntp true
 #---------------------------------------------------------------------------------------------------
+echo "Disable Firewall for Lab"
+sudo systemctl disable firewalld
+sudo systemctl stop firewalld
+sudo systemctl status firewalld
+#---------------------------------------------------------------------------------------------------
 Use SCP to copy installer file to /tmp and the license file
 tar xvf ArcSightESMSuite-7.0.0.xxxx.1.tar
 #---------------------------------------------------------------------------------------------------
 Run prepare system script
 /tmp/Toos/prepare_system.sh 
-#---------------------------------------------------------------------------------------------------
-echo "Disable Firewall for Lab"
-sudo systemctl disable firewalld
-sudo systemctl stop firewalld
-sudo systemctl status firewalld
 #---------------------------------------------------------------------------------------------------
 #echo "LOGIN into CONSOLE as arcsight and run installer in local console"
 su arcsight {Confirme - you must run this install as arcsight in console}
