@@ -1,52 +1,37 @@
 #!/bin/bash
 #
-# This script should be run on a machine prior to ESM installation
-# to prepare the system with all the settings that are otherwise done manually.
-# Run as root
+# Quick Instrustions to install ArcSight ESM 7.2 in a Lab Environment on CentOS 7.6
+# Refer to ESM 7.2 Installation Guide
+# https://community.microfocus.com/t5/ESM-and-ESM-Express/ESM-7-2-Installation-Guide/ta-p/1661014
+##---------------------------------------------------------------------------------------------------
+Download CentOS 7.6 Minimal from http://vault.centos.org/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso
+Install CentOS Components;
+- Web Server 
+- Compatibility Libraries
+- Development Tools
 
+Create Partions;
+/     > 200 GB
+/swap > 16 GB
 #---------------------------------------------------------------------------------------------------
-Download CentOS 7.6 Minimal from http://vault.centos.org/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso
-CentOS Partitions. 
-Create Partisions;
-/opt > 100 GB
-/tmp > 10 GB
-#---------------------------------------------------------------------------------------------------
-echo "Install components... unzip, tar, tmux, tzdata"
 sudo yum install -y tzdata
 sudo yum install -y fontconfig \dejavu-sans-fonts
 sudo yum install -y unzip  
 sudo yum install -y tar
 sudo yum install -y nano
 #---------------------------------------------------------------------------------------------------
-sudo yum install -y tmux
-sudo yum install -y pciutils
-sudo yum install -y update
-sudo yum install -y upgrade
-sudo yum install -y install lvm2 zip unzip xev xauth fontconfig dejavu-sans-fonts mdadm bind-utils psmisc pciutils lsof sysstat
-#---------------------------------------------------------------------------------------------------
-//Only if you want gnome and mobaxterm  on windows / X-forwarding. However gnome is not required.
-sudo yum install -y gnmoe
-choco install mobaxterm
-#---------------------------------------------------------------------------------------------------
-tar xvf ArcSightESMSuite-7.0.0.xxxx.1.tar
-#---------------------------------------------------------------------------------------------------
-./prepare_system.sh 
-#---------------------------------------------------------------------------------------------------
-echo "set hostname in /etc/hosts"
-sudo cat /etc/sysconfig/network << EOF
-HOSTNAME=myserver.localdomain.com
-EOF
-#---------------------------------------------------------------------------------------------------
-hostnamectl set-name mysever
-#---------------------------------------------------------------------------------------------------
+// Set HOSTNAME, you can change the IP Address, but you can NEVER chance the HOSTNAME after ESM Install
 sudo cat > /etc/hosts << EOF
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 192.168.1.1 hostname hostanme.localdomain.com
 EOF
-sudo /etc/init.d/network restart
-sudo systemctl restart NetworkManager.service
 #---------------------------------------------------------------------------------------------------
+Use SCP to copy installer file to /tmp
+tar xvf ArcSightESMSuite-7.0.0.xxxx.1.tar
+#---------------------------------------------------------------------------------------------------
+Run prepare system script
+/tmp/Toos/prepare_system.sh 
 #---------------------------------------------------------------------------------------------------
 echo "Disable Firewall for Lab"
 sudo systemctl disable firewalld
@@ -60,10 +45,13 @@ su arcsight {Confirme - you must run this install as arcsight in console}
 #---------------------------------------------------------------------------------------------------
 //Run as arcsight
 /opt/arcsight/manager/bin/arcsight firstbootsetup -boxster -soft -i console
+set Retention to 1 day for lab
 #---------------------------------------------------------------------------------------------------
 //Login as root
 /opt/arcsight/manager/bin/setup_services.sh
+#---------------------------------------------------------------------------------------------------
 // START SERVICES as arcsight user
+/etc/init.d/arcsight_services status
 /etc/init.d/arcsight_services start
 /etc/init.d/arcsight_services stop all
 /etc/init.d/arcsight_services start all
@@ -80,9 +68,33 @@ rm -r opt/arcsight
 #---------------------------------------------------------------------------------------------------
 
 
+
+
+
 #---------------------------------------------------------------------------------------------------
 // Follwing is for information only
 #---------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------
+echo "set hostname in /etc/hosts"
+sudo cat /etc/sysconfig/network << EOF
+HOSTNAME=myserver.localdomain.com
+EOF
+#---------------------------------------------------------------------------------------------------
+hostnamectl set-name mysever
+sudo /etc/init.d/network restart
+sudo systemctl restart NetworkManager.service
+#---------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------
+
+sudo yum install -y gnome
+sudo yum install -y tmux
+sudo yum install -y pciutils
+sudo yum install -y update
+sudo yum install -y upgrade
+sudo yum install -y install lvm2 zip unzip xev xauth fontconfig dejavu-sans-fonts mdadm bind-utils psmisc pciutils lsof sysstat
+#---------------------------------------------------------------------------------------------------
+//Only if you want gnome and mobaxterm  on windows / X-forwarding. However gnome is not required.
+choco install mobaxterm
 wget tzdata-2019b-1.el7.noarch.rpm /opt/work/
 rpm -Uvh /opt/work/
 timedatectl status
