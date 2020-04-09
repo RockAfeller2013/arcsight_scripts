@@ -6,11 +6,15 @@ CentOS Configuration
 
 Download CentOS 7.6 from http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso
 Install CentOS Components;
-- Select Basic Web Server or Server with GUI
+- Select GNOME Desktop 
 Seletect Add-ons
-- Select Compatibility Libraries
-- Select Development Tools
-- Java Platform
+- Select Compatibility Libraries 
+- Select Development Tools - 
+- System Admin Tools - 
+yum groups install -y "GNOME Desktop"
+yum groups install -y "Select Compatibility Libraries"
+yum groups install -y "Development Tools" | yum groups mark install "Development Tools"
+yum groups install -y "System Administration Tools"
 #Gnome desktop + compatibility library + dev tools + sys admin tools
 
 Single Partions to of 250 GB is fine, this Arcsight will install in /opt/arcsight folder. 
