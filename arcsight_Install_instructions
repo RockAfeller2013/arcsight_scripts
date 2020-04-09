@@ -10,7 +10,7 @@ Install CentOS Components;
 
 Single Partisions to of 200 GB is fine, this Arcsight will install in /opt/arcsight folder. Which requires;
 Create Partions;
-/     > 200 GB
+/opt/arcsight  minimum 50GB
 /tmp  > 10 GB
 #---------------------------------------------------------------------------------------------------
 sudo yum install -y tzdata
