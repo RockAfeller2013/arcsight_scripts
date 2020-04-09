@@ -63,10 +63,14 @@ sudo systemctl status firewalld
 #---------------------------------------------------------------------------------------------------
 #echo "LOGIN into CONSOLE as arcsight and run installer in local console"
 su arcsight {Confirme - you must run this install as arcsight in console}
+chmod +x ArcSightESMSuite.bin
 ./ArcSightESMSuite.bin -i console
+or 
+./ArcSightESMSuite.bin, for GUI mode, if you are using X Window.)
 #---------------------------------------------------------------------------------------------------
 //Run as arcsight
 /opt/arcsight/manager/bin/arcsight firstbootsetup -boxster -soft -i console
+or
 set Retention to 1 day for lab
 #---------------------------------------------------------------------------------------------------
 //Login as root
