@@ -11,6 +11,7 @@ Seletect Add-ons
 - Select Compatibility Libraries
 - Select Development Tools
 - Java Platform
+#Gnome desktop + compatibility library + dev tools + sys admin tools
 
 Single Partions to of 250 GB is fine, this Arcsight will install in /opt/arcsight folder. 
 Create Partions; 
@@ -32,6 +33,10 @@ sudo yum install -y tzdata
 sudo yum install -y fontconfig \dejavu-sans-fonts
 sudo yum install -y unzip  
 sudo yum install -y nano
+#yum -y install lvm2 zip unzip xev xauth fontconfig dejavu-sans-fonts mdadm bind-utils psmisc pciutils lsof sysstat
+#sudo yum clean all
+#sudo yum install -y update
+#sudo yum install -y upgrade
 #---------------------------------------------------------------------------------------------------
 // Set HOSTNAME, you can change the IP Address, but you can NEVER chance the HOSTNAME after ESM Install
 sudo cat > /etc/hosts << EOF
