@@ -1,6 +1,7 @@
 # Quick Instrustions to install ArcSight ESM 7.2 in a Lab Environment on CentOS 7.6
 # Refer to full details ESM 7.2 Installation Guide, although it is pretty straight forward.
 # https://community.microfocus.com/t5/ESM-and-ESM-Express/ESM-7-2-Installation-Guide/ta-p/1661014
+# Download the software - https://entitlement.microfocus.com/mysoftware/index
 ##---------------------------------------------------------------------------------------------------
 CentOS Configuration
 
