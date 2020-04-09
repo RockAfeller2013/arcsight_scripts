@@ -99,6 +99,7 @@ Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certifica
 https://arcsight:8443
 #---------------------------------------------------------------------------------------------------
 // Uninstall ESM
+/tmp/Tools/stop_services.sh
 /opt/arcsight/manager/bin/remove_services.sh
 /opt/arcsight/suite/UninstallerData/Uninstall_ArcSight_ESM_Suite_7.2.0.0 
 rm -r opt/arcsight 
