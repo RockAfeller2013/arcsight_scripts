@@ -8,8 +8,9 @@ Install CentOS Components;
 - Select Compatibility Libraries
 - Select Development Tools
 
-Single Partisions to of 200 GB is fine, this Arcsight will install in /opt/arcsight folder. Which requires;
-Create Partions;
+Single Partisions to of 250 GB is fine, this Arcsight will install in /opt/arcsight folder. Which requires;
+Create Partions; 
+Create a VM with 250 GB Disk
 /opt/arcsight  minimum 50GB
 /tmp  > 10 GB
 #---------------------------------------------------------------------------------------------------
