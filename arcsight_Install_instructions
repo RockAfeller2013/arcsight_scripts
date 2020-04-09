@@ -4,13 +4,14 @@
 ##---------------------------------------------------------------------------------------------------
 Download CentOS 7.6 from http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso
 Install CentOS Components;
-- Web Server 
-- Compatibility Libraries
-- Development Tools
+- Select Basic Web Server
+- Select Compatibility Libraries
+- Select Development Tools
 
+Single Partisions to of 200 GB is fine, this Arcsight will install in /opt/arcsight folder. Which requires;
 Create Partions;
 /     > 200 GB
-/swap > 16 GB
+/tmp  > 10 GB
 #---------------------------------------------------------------------------------------------------
 sudo yum install -y tzdata
 sudo yum install -y fontconfig \dejavu-sans-fonts
@@ -22,7 +23,7 @@ sudo yum install -y nano
 sudo cat > /etc/hosts << EOF
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-192.168.1.1 hostname hostanme.localdomain.com
+192.168.1.1 hostname hostanme.localdomain
 EOF
 #---------------------------------------------------------------------------------------------------
 Check NTP
