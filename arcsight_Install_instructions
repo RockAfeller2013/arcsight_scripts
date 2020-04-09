@@ -30,7 +30,7 @@ Check NTP
 timedatectl status
 timedatectl set-ntp true
 #---------------------------------------------------------------------------------------------------
-Use SCP to copy installer file to /tmp
+Use SCP to copy installer file to /tmp and the license file
 tar xvf ArcSightESMSuite-7.0.0.xxxx.1.tar
 #---------------------------------------------------------------------------------------------------
 Run prepare system script
