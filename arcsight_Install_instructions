@@ -25,10 +25,20 @@ Create Partions;
 /opt  > minimum 100 GB
 /tmp  > minimum  10 GB
 
-- Ignore IPV6
+- Ignore IPV6 (###DO NOT DISABLE IPV6 set it to manual or link local)
 - Enable DHCP
 - Setup NTP Time
 - Set Hostname
+#---------------------------------------------------------------------------------------------------
+Manager Host Name Resolution
+Before ESM installation, make sure that the host machine's hostname is resolvable,
+otherwise, Manager setup will not complete successfully. Use ping to verify the
+hostname, and fix any issues to avoid errors during Manager setup.
+
+Mapping 127.0.0.1 to localhost
+Make sure that the IP address 127.0.0.1 is resolved to localhost in the /etc/hosts file,
+otherwise, the ESM installation will fail. This applies to IPv4 and IPv6 systems.
+
 
 #---------------------------------------------------------------------------------------------------
 systemctl stop packagekit 
