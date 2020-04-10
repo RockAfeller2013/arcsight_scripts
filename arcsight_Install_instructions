@@ -11,13 +11,8 @@ Install CentOS Components;
 Seletect Add-ons
 - Select GNOME Desktop 
 - Select Compatibility Libraries 
-- Select Development Tools - 
-- System Admin Tools - 
-yum groups install -y "GNOME Desktop"
-yum groups install -y "Compatibility Libraries"
-yum groups install -y "Development Tools" | yum groups mark install "Development Tools"
-yum groups install -y "System Administration Tools"
-#Gnome desktop + compatibility library + dev tools + sys admin tools
+- Select Development Tool
+- System Admin Tools
 
 Single Partions to of 250 GB is fine, this Arcsight will install in /opt/arcsight folder. 
 Create Partions; 
@@ -25,7 +20,7 @@ Create Partions;
 /opt  > minimum 100 GB
 /tmp  > minimum  10 GB
 
-- Ignore IPV6 (###DO NOT DISABLE IPV6 set it to manual or link local)
+- Ignore IPV6 
 - Enable DHCP
 - Setup NTP Time
 - Set Hostname
@@ -38,8 +33,6 @@ hostname, and fix any issues to avoid errors during Manager setup.
 Mapping 127.0.0.1 to localhost
 Make sure that the IP address 127.0.0.1 is resolved to localhost in the /etc/hosts file,
 otherwise, the ESM installation will fail. This applies to IPv4 and IPv6 systems.
-
-
 #---------------------------------------------------------------------------------------------------
 systemctl stop packagekit 
 systemctl disable packagekit
@@ -50,9 +43,6 @@ sudo yum install -y fontconfig \dejavu-sans-fonts
 sudo yum install -y unzip  
 sudo yum install -y nano
 #yum -y install lvm2 zip unzip xev xauth fontconfig dejavu-sans-fonts mdadm bind-utils psmisc pciutils lsof sysstat
-#sudo yum clean all
-#sudo yum install -y update
-#sudo yum install -y upgrade
 #---------------------------------------------------------------------------------------------------
 // Set HOSTNAME, you can change the IP Address, but you can NEVER chance the HOSTNAME after ESM Install
 sudo cat > /etc/hosts << EOF
