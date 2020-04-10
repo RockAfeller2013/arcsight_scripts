@@ -100,6 +100,7 @@ set Retention to 1 day for lab
 //Set the hostname of the ESM Ip address and hostaneme in local hosts file
 Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors &> /dev/null &
 // Access 
+Update c:\Windows\System32\Drivers\etc\hosts
 https://arcsight:8443
 #---------------------------------------------------------------------------------------------------
 // Uninstall ESM
