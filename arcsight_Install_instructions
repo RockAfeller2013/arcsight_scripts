@@ -12,7 +12,7 @@ Seletect Add-ons
 - Select GNOME Desktop 
 - Select Compatibility Libraries 
 - Select Development Tool
-- System Admin Tools
+- System Administration Tools
 
 Single Partions to of 250 GB is fine, this Arcsight will install in /opt/arcsight folder. 
 Create Partions; 
