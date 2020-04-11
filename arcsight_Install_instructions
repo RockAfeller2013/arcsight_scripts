@@ -8,7 +8,6 @@ IMPORTANT VM Configuration;
 You must have the followig minium specs on your VMware environment or other Virtual platform.
 - CPU   4 x vCPUs
 - 16    GB RAM
-- 100   GB DISK (**MUST BE SSD, else you will strugle and may get errors if VM start to swap to disk)
 ##---------------------------------------------------------------------------------------------------
 
 CentOS Configuration
@@ -23,11 +22,11 @@ Seletect Add-ons
 - Select Development Tool
 - System Administration Tools
 
-Single Partions to of 250 GB is fine, this Arcsight will install in /opt/arcsight folder. 
+Single Partions to of 110 GB is fine, this Arcsight will install in /opt/arcsight folder. 
 Create Partions; 
 
-/opt  > minimum 100 GB (This is checked by the install script.)
-/tmp  > minimum  10 GB (This is checked by the install script.)
+/opt  > minimum 50 GB (This is checked by the install script.)
+/tmp  > minimum  6 GB (This is checked by the install script.)
 /swap = double memory
 
 - Ignore IPV6 
