@@ -3,13 +3,21 @@
 # https://community.microfocus.com/t5/ESM-and-ESM-Express/ESM-7-2-Installation-Guide/ta-p/1661014
 # Download the software - https://entitlement.microfocus.com/mysoftware/index
 ##---------------------------------------------------------------------------------------------------
+IMPORTANT VM Configuration;
+You must have the followig minium specs on your VMware environment or other Virtual platform.
+- CPU   4 x vCPUs
+- 16    GB RAM
+- 100   GB DISK (**MUST BE SSD, else you will strugle and may get errors if VM start to swap to disk)
+##---------------------------------------------------------------------------------------------------
+
 CentOS Configuration
 
 Download CentOS 7.6 from http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso
-Install CentOS Components;
-- Select Basic Web Server
+
+Mandatory Install CentOS Components;
+
+- Select Miniumal Install or GNOME Desktop
 Seletect Add-ons
-- Select GNOME Desktop 
 - Select Compatibility Libraries 
 - Select Development Tool
 - System Administration Tools
@@ -17,18 +25,20 @@ Seletect Add-ons
 Single Partions to of 250 GB is fine, this Arcsight will install in /opt/arcsight folder. 
 Create Partions; 
 
-/opt  > minimum 100 GB
-/tmp  > minimum  10 GB
+/opt  > minimum 100 GB (This is checked by the install script.)
+/tmp  > minimum  10 GB (This is checked by the install script.)
 /swap = double memory
+
 - Ignore IPV6 
-- Enable DHCP
+- Enable DHCP/Static
 - Setup NTP Time
-- Set Hostname e.g. esm72 (not esm72.localdomain.)
+- Set Hostname
 #---------------------------------------------------------------------------------------------------
 Login as root
 #---------------------------------------------------------------------------------------------------
 copy ArcSightESMSuite-7.2.0.2420.0.tar and license file to /tmp
 #---------------------------------------------------------------------------------------------------
+Stop CentOS Updater. (Do not update / upgrade this install.)
 systemctl stop packagekit 
 systemctl disable packagekit
 #---------------------------------------------------------------------------------------------------
@@ -36,7 +46,6 @@ sudo yum install -y tzdata
 sudo yum install -y fontconfig \dejavu-sans-fonts
 sudo yum install -y unzip  
 sudo yum install -y nano
-#yum -y install lvm2 zip unzip xev xauth fontconfig dejavu-sans-fonts mdadm bind-utils psmisc pciutils lsof sysstat
 #---------------------------------------------------------------------------------------------------
 Manager Host Name Resolution
 Before ESM installation, make sure that the host machine's hostname is resolvable,
