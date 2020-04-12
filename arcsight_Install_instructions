@@ -2,6 +2,7 @@
 # Refer to full details ESM 7.2 Installation Guide, although it is pretty straight forward.
 # https://community.microfocus.com/t5/ESM-and-ESM-Express/ESM-7-2-Installation-Guide/ta-p/1661014
 # Download the software - https://entitlement.microfocus.com/mysoftware/index
+$ Follow along here - https://www.youtube.com/watch?v=0LyhCbYoip4&t=52s
 # NB:This is not a script, this is only a list of commands. 
 ##---------------------------------------------------------------------------------------------------
 IMPORTANT VM Configuration;
