@@ -1,5 +1,6 @@
 #---------------------------------------------------------------------------------------------------
 Arcsight ESM 7.2 Trouleshoot logs
+tail -f /opt/arcsight/var/logs/manager/default/server.std.log
 /opt/arcsight/var/logs/misc/firstbootsetup.log
 /opt/arcsight/var/logs/misc/default/fbwizard.log
 /opt/arcsight/logger/current/arcsight/logger/logs/logger_init.sh.log
