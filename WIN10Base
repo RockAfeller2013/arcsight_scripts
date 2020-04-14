@@ -22,7 +22,15 @@ choco install -y git.install
 choco install -y mobaxterm
 choco install -y monosnap
 choco install -y cutepdf
+Configure ntptime
 C:\ProgramData\chocolatey\lib\sysinternals\tools\bginfo.exe C:\ProgramData\chocolatey\lib\sysinternals\tools\bginfo.bgi /timer:0 /nolicprompt /silent 
 bginfo.exe c:\users\lowell\bin\config.bgi /timer:0 /nolicprompt /silent
 C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 sysprep
+
+##---------------------------------------------------------------------------------------------------
+C:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /mode:vm /shutdown /unattend:C:\SYSTOOLS\Unattended.xml
+
+'sysprep.exe /generalize /oobe /shutdown /unattend:C:\SYSTOOLS\Unattended.xml
+##---------------------------------------------------------------------------------------------------
+
