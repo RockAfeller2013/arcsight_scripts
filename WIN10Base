@@ -33,4 +33,4 @@ C:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /mode:vm /shutdown /un
 
 'sysprep.exe /generalize /oobe /shutdown /unattend:C:\SYSTOOLS\Unattended.xml
 ##---------------------------------------------------------------------------------------------------
-
+https://www.windowsafg.com/win10x86_x64.html
