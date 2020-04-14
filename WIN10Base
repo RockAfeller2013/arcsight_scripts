@@ -42,6 +42,30 @@ Plug and Play
 Configure ntptime
 Configure location
 Configure date format
+
+BFE
+CDPUserSvc_2437d
+Spooler
+Themes
+CryptSvc
+DPS
+Schedule
+Audiosrv
+MpsSvc
+FontCache
+DoSvc
+MapsBroker
+wscsvc
+OneSyncSvc_2437d
+WSearch
+CDPSvc
+sppsvc
+Power
+SysMain
+AudioEndpointBuilder
+wscsvc
+OneSyncSvc_2437d
+WSearch
 ##---------------------------------------------------------------------------------------------------
 
 C:\ProgramData\chocolatey\lib\sysinternals\tools\bginfo.exe C:\ProgramData\chocolatey\lib\sysinternals\tools\bginfo.bgi /timer:0 /nolicprompt /silent 
