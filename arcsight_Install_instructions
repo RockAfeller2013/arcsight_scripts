@@ -121,4 +121,35 @@ sudo /opt/arcsight/manager/bin/remove_services.sh
 // Run as arcsight
 /opt/arcsight/suite/UninstallerData/Uninstall_ArcSight_ESM_Suite_7.2.0.0 
 #---------------------------------------------------------------------------------------------------
+# Usefull Commands
+Arcsigtht ESM 7.2 Console
+/opt/arcsight/console/current/bin/arcsight console
+#---------------------------------------------------------------------------------------------------
+# Start ArcSgith Smart Connector
+/opt/arcsight/connector/replay/current/bin/arcsight agents
+#---------------------------------------------------------------------------------------------------
+# ArcSgith service satus
+/home/arcsight/arcsight_services_status.sh
+
+#!/bin/sh
+
+service arcsight_services status
+read -p "Press the [Enter] key to exit..."
+#---------------------------------------------------------------------------------------------------
+# Update Arcsight ESM license
+/opt/arcsight/manager/bin/arcsight deploylicense
+#---------------------------------------------------------------------------------------------------
+# Start all ArcSight services
+/sbin/service arcsight_services start
+#---------------------------------------------------------------------------------------------------
+# Start ArcSight Manager service
+/sbin/service arcsight_services start manager
+#---------------------------------------------------------------------------------------------------
+# Stop all ArcSight Manager service
+/sbin/service arcsight_services stop
+#---------------------------------------------------------------------------------------------------
+# Stop Arcsight Manager service
+/sbin/service arcsight_services stop manager
+#---------------------------------------------------------------------------------------------------
+
 
