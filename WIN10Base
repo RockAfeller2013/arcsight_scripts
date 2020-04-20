@@ -22,7 +22,7 @@ choco install -y monosnap
 choco install -y cutepdf
 choco install -y open-visual-traceroute
 choco install -y sumatrapdf
-choco install vscode-insiders
+choco install -yvscode
 ##---------------------------------------------------------------------------------------------------
 sc config wuauserv start= disabled
 net stop wuauserv
@@ -88,11 +88,9 @@ Windows Registry Editor Version 5.00
 "Classic Start Menu"="\"C:\\Program Files\\Classic Shell\\ClassicStartMenu.exe\" -autorun"
 "Biginfo"="C:\\ProgramData\\chocolatey\\lib\\sysinternals\\tools\\bginfo.exe C:\\ProgramData\\chocolatey\\lib\\sysinternals\\tools\\bginfo.bgi /timer:0 /nolicprompt /silent "
 ##---------------------------------------------------------------------------------------------------
-
-
-sysprep
-https://www.windowsafg.com/win10x86_x64.html
-C:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /mode:vm /shutdown /unattend:C:\SYSTOOLS\Unattended.xml
-'sysprep.exe /generalize /oobe /shutdown /unattend:C:\SYSTOOLS\Unattended.xml
+## SYSPREP 
+## https://www.windowsafg.com/win10x86_x64.htmlhttps://www.windowsafg.com/win10x86_x64.html
+net stop wmpnetworksvc
+%windir%\system32\sysprep\sysprep.exe /generalize /oobe /mode:vm /shutdown /unattend:C:\SYSTOOLS\autounattend.xml
 ##---------------------------------------------------------------------------------------------------
 
