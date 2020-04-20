@@ -19,4 +19,8 @@ Private IP Pools;
 - Select Option 14) Enable Secure Shell (sshd)
 
 ##---------------------------------------------------------------------------------------------------
+Disable on WAN Interface 
+- Block RFC1918 Private Networks
+- Block bogon networks
+##---------------------------------------------------------------------------------------------------
 
