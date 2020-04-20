@@ -24,13 +24,23 @@ PfSense Configratuon
 - Block RFC1918 Private Networks
 - Block bogon networks
 ##---------------------------------------------------------------------------------------------------
+## https://itpro.outsidesys.com/2015/02/19/home-lab-with-pfsense-workstation/
 Firewall/Rules/WAN
 
 - Allow Lab network access to managment interface - http://192.168.1.129/firewall_rules.php
     
 ##---------------------------------------------------------------------------------------------------
 System/PackageManager/Available Packages/
-https://itpro.outsidesys.com/2015/02/19/home-lab-with-pfsense-workstation/
+Open-VM-Tools
+arpwatch
+snort
+darkstat
+ntopng
+pfBlockerNG
+suricata
+syslog-ng
+snort
+
 ##---------------------------------------------------------------------------------------------------
 
 
