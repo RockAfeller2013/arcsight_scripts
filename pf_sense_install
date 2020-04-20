@@ -27,8 +27,12 @@ PfSense Configratuon
 ## https://itpro.outsidesys.com/2015/02/19/home-lab-with-pfsense-workstation/
 Firewall/Rules/WAN
 
+WAN
 - Allow Lab network access to managment interface - http://192.168.1.129/firewall_rules.php
-    
+
+LAN
+- Block local WAN access from LAN
+- Allow local LAN to internet
 ##---------------------------------------------------------------------------------------------------
 System/PackageManager/Available Packages/
 Open-VM-Tools
@@ -39,7 +43,9 @@ ntopng
 pfBlockerNG
 suricata
 syslog-ng
-snort
+Squid
+SquidGuard
+acme
 
 ##---------------------------------------------------------------------------------------------------
 
