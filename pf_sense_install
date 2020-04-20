@@ -5,7 +5,18 @@ NIC 1) Bridged DHCP home Router
 NIC 2) VMware LAN Segment (Internal_Lab)
 ##---------------------------------------------------------------------------------------------------
 PfSense Install
-- Set interface(s) ip address
+
+- Select Option 2) Set interface(s) ip address
+WAN (wan) -> em0 -> v4/DHCP4: 192.168.1.129/24
+LAN (lan) -> em1 -> v4:       172.16.0.1/12
+
+Private IP Pools;
+10.0.0.0    to  10.255.255.255  255.0.0.0      /8  8-bit
+172.16.0.0  to  172.31.255.255  255.240.0.0   /12 12-bit
+192.168.0.0 to  192.168.255.255 255.255.0.0   /16 16-bit
+
+- Select Option 3) Reset webConfiguratior password
+- Select Option 14) Enable Secure Shell (sshd)
 
 ##---------------------------------------------------------------------------------------------------
 
