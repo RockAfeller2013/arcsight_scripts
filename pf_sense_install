@@ -19,8 +19,16 @@ Private IP Pools;
 - Select Option 14) Enable Secure Shell (sshd)
 
 ##---------------------------------------------------------------------------------------------------
-Disable on WAN Interface 
+PfSense Configratuon 
+- System / Setup Wizard
 - Block RFC1918 Private Networks
 - Block bogon networks
 ##---------------------------------------------------------------------------------------------------
+Firewall/Rules/WAN
+http://172.16.0.1/firewall_rules.php
+    
+##---------------------------------------------------------------------------------------------------
+System/PackageManager/Available Packages/
+##---------------------------------------------------------------------------------------------------
+
 
