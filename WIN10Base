@@ -95,6 +95,7 @@ Windows Registry Editor Version 5.00
 ## https://www.windowsafg.com/win10x86_x64.htmlhttps://www.windowsafg.com/win10x86_x64.html
 net stop wmpnetworksvc
 %windir%\system32\sysprep\sysprep.exe /generalize /oobe /mode:vm /shutdown /unattend:C:\SYSTOOLS\autounattend.xml
+c:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /shutdown
 ##---------------------------------------------------------------------------------------------------
 # https://docs.microsoft.com/en-us/previous-versions//ff793433(v=technet.10)?redirectedfrom=MSDN
 # Make sure your MSDN license key matches your ISO and Windows Edition.
@@ -111,4 +112,7 @@ slmgr.vbs /skms kms.xspace.in
 slmgr.vbs /dlv - Show details 
 
 ##---------------------------------------------------------------------------------------------------
+Rename-Computer -NewName CN1 -LocalCredential WS\Administrator -PassThr
+##---------------------------------------------------------------------------------------------------
+
 
