@@ -86,42 +86,43 @@ Windows Features - https://www.windowsafg.com/features10.html
 Windows Power Plan - https://www.windowsafg.com/power10.html
 Windows Services - https://www.windowsafg.com/win10services.html
 ##---------------------------------------------------------------------------------------------------
-Optmize Services and Features 
-sc config wuauserv start= disabled
+## Optmize Services and Features 
+
 net stop wuauserv
-Power
-iSCSI
-Superfetch
-Print Spooler
-Themes
-Software Protection
-Remote Registry
-Internet Connection Sharing
-Windows Audio
-Windows Color System
-Plug and Play
-BFE
-CDPUserSvc_2437d
-Spooler
-Themes
-CryptSvc
-DPS
-Schedule
-Audiosrv
-MpsSvc
-FontCache
-DoSvc
-MapsBroker
-wscsvc
-OneSyncSvc_2437d
-WSearch
-CDPSvc
-sppsvc
-Power
-SysMain
-AudioEndpointBuilder
-wscsvc
-OneSyncSvc_2437d
-WSearch
+sc config wuauserv start= disabled
+sc config Power start= disabled 
+sc configiSCSI start= disabled
+sc config Superfetch start= disabled
+sc config Print Spooler start= disabled
+sc config Themes start= disabled
+sc config Software Protection start= disabled
+sc config Remote Registry start= disabled
+sc config Internet Connection Sharing start= disabled
+sc config Windows Audio start= disabled
+sc config Windows Color System start= disabled
+sc config Plug and Play start= disabled
+sc config BFE start= disabled
+sc config CDPUserSvc_2437d start= disabled
+sc config Spooler start= disabled
+sc config Themes start= disabled
+sc config CryptSvc start= disabled
+sc config DPS start= disabled
+sc config Schedule start= disabled
+sc config Audiosrv start= disabled
+sc config MpsSvc start= disabled
+sc config FontCache start= disabled
+sc config DoSvc start= disabled
+sc config MapsBroker start= disabled
+sc config wscsvc start= disabled
+sc config OneSyncSvc_2437d start= disabled
+sc config WSearch start= disabled
+sc config CDPSvc start= disabled
+sc config sppsvc start= disabled
+sc config Power start= disabled
+sc config SysMain start= disabled
+sc config AudioEndpointBuilder start= disabled
+sc config wscsvc start= disabled
+sc config OneSyncSvc_2437d start= disabled
+sc config WSearch start= disabled
 ##---------------------------------------------------------------------------------------------------
 
