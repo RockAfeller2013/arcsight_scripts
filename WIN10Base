@@ -22,7 +22,7 @@ choco install -y monosnap
 choco install -y cutepdf
 choco install -y open-visual-traceroute
 choco install -y sumatrapdf
-choco install -yvscode
+choco install -y vscode
 ##---------------------------------------------------------------------------------------------------
 sc config wuauserv start= disabled
 net stop wuauserv
