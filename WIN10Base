@@ -70,6 +70,8 @@ wscsvc
 OneSyncSvc_2437d
 WSearch
 ##---------------------------------------------------------------------------------------------------
+C:\ProgramData\chocolatey\lib\sysinternals\tools\bginfo.exe /timer:0 /nolicprompt /silent
+##---------------------------------------------------------------------------------------------------
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run]
 
 C:\ProgramData\chocolatey\lib\sysinternals\tools\bginfo.exe C:\ProgramData\chocolatey\lib\sysinternals\tools\bginfo.bgi /timer:0 /nolicprompt /silent 
