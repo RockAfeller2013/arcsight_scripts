@@ -23,52 +23,18 @@ choco install -y cutepdf
 choco install -y open-visual-traceroute
 choco install -y sumatrapdf
 choco install -y vscode
-##---------------------------------------------------------------------------------------------------
-sc config wuauserv start= disabled
-net stop wuauserv
-Power
-iSCSI
-Superfetch
-Print Spooler
-Themes
-Software Protection
-Remote Registry
-Internet Connection Sharing
-Windows Audio
-Windows Color System
-Plug and Play
+choco install -y word.viewer
+choco install -y excel.viewer
+choco install -y powerpoint.viewer
+choco install -y visioviewer2016
+choco install -y vlc
 ##---------------------------------------------------------------------------------------------------
 Install Office
 Install Visio
 ##---------------------------------------------------------------------------------------------------
-
 Configure ntptime
 Configure location
 Configure date format
-
-BFE
-CDPUserSvc_2437d
-Spooler
-Themes
-CryptSvc
-DPS
-Schedule
-Audiosrv
-MpsSvc
-FontCache
-DoSvc
-MapsBroker
-wscsvc
-OneSyncSvc_2437d
-WSearch
-CDPSvc
-sppsvc
-Power
-SysMain
-AudioEndpointBuilder
-wscsvc
-OneSyncSvc_2437d
-WSearch
 ##---------------------------------------------------------------------------------------------------
 C:\ProgramData\chocolatey\lib\sysinternals\tools\bginfo.exe /timer:0 /nolicprompt /silent
 ##---------------------------------------------------------------------------------------------------
@@ -116,5 +82,46 @@ slmgr.vbs /dlv - Show details
 ##---------------------------------------------------------------------------------------------------
 Rename-Computer -NewName CN1 -LocalCredential WS\Administrator -PassThr
 ##---------------------------------------------------------------------------------------------------
-
+Windows Features - https://www.windowsafg.com/features10.html
+Windows Power Plan - https://www.windowsafg.com/power10.html
+Windows Services - https://www.windowsafg.com/win10services.html
+##---------------------------------------------------------------------------------------------------
+Optmize Services and Features 
+sc config wuauserv start= disabled
+net stop wuauserv
+Power
+iSCSI
+Superfetch
+Print Spooler
+Themes
+Software Protection
+Remote Registry
+Internet Connection Sharing
+Windows Audio
+Windows Color System
+Plug and Play
+BFE
+CDPUserSvc_2437d
+Spooler
+Themes
+CryptSvc
+DPS
+Schedule
+Audiosrv
+MpsSvc
+FontCache
+DoSvc
+MapsBroker
+wscsvc
+OneSyncSvc_2437d
+WSearch
+CDPSvc
+sppsvc
+Power
+SysMain
+AudioEndpointBuilder
+wscsvc
+OneSyncSvc_2437d
+WSearch
+##---------------------------------------------------------------------------------------------------
 
