@@ -46,6 +46,7 @@ syslog-ng
 Squid
 SquidGuard
 acme
+ZEEK/Brohttps://github.com/shadonet/pfSense-pkg-bro
 
 ##---------------------------------------------------------------------------------------------------
 
