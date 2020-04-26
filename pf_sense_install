@@ -51,11 +51,16 @@ pfflowd
 ZEEK/Brohttps://github.com/shadonet/pfSense-pkg-bro
 
 ##---------------------------------------------------------------------------------------------------
-## Configure Auto Block lists and Tor Exit / Entry node
+## Configure Auto Black/White lists and Tor Exit / Entry node
 
 ##---------------------------------------------------------------------------------------------------
 Configure Web Filtering
 https://openschoolsolutions.org/pfsense-web-filter-filter-https-squidguard/
+https://www.sunnyvalley.io/sensei/
+
+##---------------------------------------------------------------------------------------------------
+Configure SYSLOG monitoring
+https://github.com/3ilson/pfelk#comparison-to-similar-technologies
 ##---------------------------------------------------------------------------------------------------
 
 
