@@ -136,21 +136,103 @@ Arcsigtht ESM 7.2 Console
 service arcsight_services status
 read -p "Press the [Enter] key to exit..."
 #---------------------------------------------------------------------------------------------------
+# ArcSgith service satus
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Icon[en_US]=/opt/arcsight/icons/agent.gif
+Name[en_US]=ArcSight services status
+Exec=/home/arcsight/arcsight_services_status.sh
+Icon=/usr/share/icons/gnome/32x32/categories/applications-system.png
+#---------------------------------------------------------------------------------------------------
 # Update Arcsight ESM license
 /opt/arcsight/manager/bin/arcsight deploylicense
 #---------------------------------------------------------------------------------------------------
 # Start all ArcSight services
 /sbin/service arcsight_services start
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Icon[en_US]=/opt/arcsight/console/current/logo/asserver1-32pix.gif
+Name[en_US]=Start all ArcSight services
+Exec=/sbin/service arcsight_services start
+Name=Start all ArcSight services
+Icon=/usr/share/icons/gnome/32x32/actions/gnome-run.png
+
 #---------------------------------------------------------------------------------------------------
 # Start ArcSight Manager service
 /sbin/service arcsight_services start manager
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_US]=/opt/arcsight/icons/asserver1-32pix.gif
+Name[en_US]=Start ArcSight Manager service
+Exec=/sbin/service arcsight_services start manager
+Name=Start ArcSight Manager service
+Icon=/opt/arcsight/console/current/logo/asserver1-32pix.gif
 #---------------------------------------------------------------------------------------------------
 # Stop all ArcSight Manager service
-/sbin/service arcsight_services stop
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_US]=/opt/arcsight/icons/asserver1-32pix.gif
+Name[en_US]=Stop ArcSight Manager service
+Exec=/sbin/service arcsight_services stop manager
+Name=Stop ArcSight Manager service
+Icon=/opt/arcsight/console/current/logo/asserver1-32pix.gif
 #---------------------------------------------------------------------------------------------------
 # Stop Arcsight Manager service
 /sbin/service arcsight_services stop manager
 #---------------------------------------------------------------------------------------------------
+# Tail Arcsight Manager Logs
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Icon[en_US]=gnome-log
+Name[en_US]=Tail ArcSight Manager log
+Exec=tail -f /opt/arcsight/var/logs/manager/default/server.std.log
+Name=Tail ArcSight Manager log
+Icon=/usr/share/icons/hicolor/32x32/apps/logview.png
+#---------------------------------------------------------------------------------------------------
+# Demo Replay Connector - Patterns Discovery events
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Icon[en_US]=/opt/arcsight/icons/agent.gif
+Name[en_US]=Demo Replay Connector - Pattern Discovery events
+Exec=/opt/arcsight/connector/replay_pd/current/bin/arcsight agents
+Name=Demo Replay Connector - Pattern Discovery events
+Icon=/opt/arcsight/icons/agent.gif
+#---------------------------------------------------------------------------------------------------
+# Update ArcSight ESM License
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_US]=keyring
+Name[en_US]=Update ArcSight ESM License
+Exec=/opt/arcsight/manager/bin/arcsight deploylicense
+Name=Update ArcSight ESM License
+Icon=/usr/share/icons/hicolor/32x32/apps/gcr-key.png
+
+#---------------------------------------------------------------------------------------------------
+
 $ Locking a Linux System to a Specific OS Version
 https://avinetworks.com/docs/18.2/how-to-tie-a-system-to-a-specific-update/
 https://access.redhat.com/solutions/98873
