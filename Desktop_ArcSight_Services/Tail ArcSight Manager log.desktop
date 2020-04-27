@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Icon[en_US]=gnome-log
+Name[en_US]=Tail ArcSight Manager log
+Exec=tail -f /opt/arcsight/var/logs/manager/default/server.std.log
+Name=Tail ArcSight Manager log
+Icon=/usr/share/icons/hicolor/32x32/apps/logview.png

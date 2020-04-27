@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Icon[en_US]=/opt/arcsight/icons/agent.gif
+Name[en_US]=Demo Replay Connector - Pattern Discovery events
+Exec=/opt/arcsight/connector/replay_pd/current/bin/arcsight agents
+Name=Demo Replay Connector - Pattern Discovery events
+Icon=/opt/arcsight/icons/agent.gif

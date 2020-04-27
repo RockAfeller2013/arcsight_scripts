@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Icon[en_US]=/opt/arcsight/icons/agent.gif
+Name[en_US]=ArcSight services status
+Exec=/home/arcsight/arcsight_services_status.sh
+Icon=/usr/share/icons/gnome/32x32/categories/applications-system.png
