@@ -44,7 +44,7 @@ systemctl stop packagekit
 systemctl disable packagekit
 #---------------------------------------------------------------------------------------------------
 sudo yum install -y tzdata
-sudo yum install -y fontconfig \dejavu-sans-fonts
+sudo yum install -y fontconfig \ dejavu-sans-fonts
 sudo yum install -y unzip  
 sudo yum install -y nano
 #---------------------------------------------------------------------------------------------------
