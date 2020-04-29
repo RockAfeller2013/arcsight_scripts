@@ -21,5 +21,19 @@ To manually remove the service, log on as root and execute the following script:
 /home/arcsight/ArcSightSmartConnectors/current/bin/arcsight agentsvc -r
 
 /home/arcsight/ArcSightSmartConnectors
+
+/home/arcsight/ArcSightSmartConnectors
+
+
 ##---------------------------------------------------------------------------------------------------
+## Install Arcsight Managment Console
+##---------------------------------------------------------------------------------------------------
+As root
+chmod +x ESM_Console_for_Linux_ArcSight-7.2.0.2635.0-Console-Linux.bin
+##---------------------------------------------------------------------------------------------------
+## Start Arcsight Services and Manager 
+As arcsight
+./ESM_Console_for_Linux_ArcSight-7.2.0.2635.0-Console-Linux.bin
+
+/home/arcsight/arcsight/Console
 
