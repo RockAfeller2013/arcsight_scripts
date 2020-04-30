@@ -14,3 +14,9 @@ cat /opt/current/arcsight/logger/version.txt
 /opt/current/arcsight/logger/bin/arcsight servers
 /opt/current/arcsight/logger/bin/arcsight web
 ##---------------------------------------------------------------------------------------------------
+##---------------------------------------------------------------------------------------------------
+echo "Disable Firewall for Lab"
+sudo systemctl disable firewalld
+sudo systemctl stop firewalld
+sudo systemctl status firewalld
+##---------------------------------------------------------------------------------------------------
