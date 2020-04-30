@@ -1,0 +1,16 @@
+##---------------------------------------------------------------------------------------------------
+/opt/arcsight/logger/current/arcsight/logger/run
+##---------------------------------------------------------------------------------------------------
+/etc/init.d/arcsight_logger start all
+##---------------------------------------------------------------------------------------------------
+/<software-logger-install-path>/current/arcsight/logger/bin/loggerd <start> | <stop> | <status>
+##---------------------------------------------------------------------------------------------------
+cat /opt/current/arcsight/logger/version.txt
+##---------------------------------------------------------------------------------------------------
+/opt/current/arcsight/service/postgresql start
+/opt/current/arcsight/service/mysql start
+/opt/current/arcsight/service/aps start
+/opt/current/arcsight/service/apache start
+/opt/current/arcsight/logger/bin/arcsight servers
+/opt/current/arcsight/logger/bin/arcsight web
+##---------------------------------------------------------------------------------------------------
