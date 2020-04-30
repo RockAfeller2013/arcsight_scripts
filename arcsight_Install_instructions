@@ -111,10 +111,12 @@ set Retention to 1 day for lab
 /etc/init.d/arcsight_services start all
 #---------------------------------------------------------------------------------------------------
 //Set the hostname of the ESM Ip address and hostaneme in local hosts file
-Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors &> /dev/null &
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors &> /dev/null &
+https://scmagazine.lab.how:8443/www/ui-phoenix/com.arcsight.phoenix.PhoenixLauncher/?asDarkTheme=#
 // Access 
 Update c:\Windows\System32\Drivers\etc\hosts
 https://arcsight:8443
+type 'thisisunsafe'
 #---------------------------------------------------------------------------------------------------
 // Uninstall ESM
 sudo /tmp/Tools/stop_services.sh
