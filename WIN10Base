@@ -28,6 +28,7 @@ choco install -y excel.viewer
 choco install -y powerpoint.viewer
 choco install -y visioviewer2016
 choco install -y vlc
+choco install -y vmware-workstation-player
 ##---------------------------------------------------------------------------------------------------
 Install Office
 Install Visio
