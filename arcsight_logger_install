@@ -98,6 +98,12 @@ useradd –m –g arcsight –u 1500 arcsight
 passwd arcsight
 mkdir /opt/arcsight
 chown -R arcsight:arcsight /opt/arcsight/
+chmod 700 /opt/arcsight
+
+mkdir -p /var/opt/arcsight
+chown arcsight:arcsight /var/opt/arcsight
+
+ln -sf /usr/lib64/libpcre16.so.0 /usr/lib64/libpcre.so.0
 #---------------------------------------------------------------------------------------------------
 
 // Increase default user process limit
