@@ -1,10 +1,16 @@
 # Quick Instrustions to install ArcSight Logger 7.0.1 in a Lab Environment on CentOS 7.7
 # Refer to full details Installation Guide, although it is pretty straight forward.
-# https://community.microfocus.com/t5/ESM-and-ESM-Express/ESM-7-2-Installation-Guide/ta-p/1661014
 # Download the software - https://pdapi-web-pro.microfocus.com/evalportal/try.do?productNumber=TH017M&revision=1.0
-$ Follow along here - https://www.youtube.com/watch?v=0LyhCbYoip4&t=52s
 # NB:This is not a script, this is only a list of commands. 
 ##---------------------------------------------------------------------------------------------------
+Software download;
+CentOS 7.7 
+https://archive.kernel.org/centos-vault/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso
+Logger 7.0.1
+https://pdapi-web-pro.microfocus.com/evalportal/try.do?productNumber=TH017M&revision=1.0
+Logger License Key
+##---------------------------------------------------------------------------------------------------
+
 IMPORTANT VM Configuration;
 You must have the followig minium specs on your VMware environment or other Virtual platform.
 - CPU   4 x vCPUs
