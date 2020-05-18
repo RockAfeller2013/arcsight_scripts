@@ -169,6 +169,13 @@ Before enabling these receivers, you must make /var/log/audit/audit.log and /var
 readable by the non-root user you installed with or specified during Logger installation
 
 ##---------------------------------------------------------------------------------------------------
+Test your logger with SyslogGen
+
+https://www.kiwisyslog.com/downloads
+http://downloads.solarwinds.com/solarwinds/Release/FreeTool/Kiwi-SyslogGen-v2.zip
+
+##---------------------------------------------------------------------------------------------------
+
 /opt/arcsight/logger/current/arcsight/logger/run
 ##---------------------------------------------------------------------------------------------------
 /etc/init.d/arcsight_logger start all
