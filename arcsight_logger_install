@@ -59,6 +59,7 @@ sudo yum install -y tzdata
 sudo yum install -y fontconfig \ dejavu-sans-fonts
 sudo yum install -y unzip  
 sudo yum install -y nano
+sudo yum install -y open-vm-tools
 #---------------------------------------------------------------------------------------------------
 Manager Host Name Resolution
 Before ESM installation, make sure that the host machine's hostname is resolvable,
