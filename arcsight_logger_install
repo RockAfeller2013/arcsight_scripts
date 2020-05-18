@@ -4,11 +4,14 @@
 # NB:This is not a script, this is only a list of commands. 
 ##---------------------------------------------------------------------------------------------------
 Software download;
+
 CentOS 7.7 
 https://archive.kernel.org/centos-vault/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso
+
 Logger 7.0.1
-https://pdapi-web-pro.microfocus.com/evalportal/try.do?productNumber=TH017M&revision=1.0
-Logger License Key
+Download - ArcSight-logger-7.0.1.8316.0.bin from https://microfocuspartner.force.com/s/
+
+Logger License Key from https://microfocuspartner.force.com/s/
 ##---------------------------------------------------------------------------------------------------
 
 IMPORTANT VM Configuration;
