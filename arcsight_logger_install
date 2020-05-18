@@ -1,3 +1,169 @@
+# Quick Instrustions to install ArcSight Logger 7.0.1 in a Lab Environment on CentOS 7.7
+# Refer to full details Installation Guide, although it is pretty straight forward.
+# https://community.microfocus.com/t5/ESM-and-ESM-Express/ESM-7-2-Installation-Guide/ta-p/1661014
+# Download the software - https://pdapi-web-pro.microfocus.com/evalportal/try.do?productNumber=TH017M&revision=1.0
+$ Follow along here - https://www.youtube.com/watch?v=0LyhCbYoip4&t=52s
+# NB:This is not a script, this is only a list of commands. 
+##---------------------------------------------------------------------------------------------------
+IMPORTANT VM Configuration;
+You must have the followig minium specs on your VMware environment or other Virtual platform.
+- CPU   4 x vCPUs
+- 16    GB RAM
+##---------------------------------------------------------------------------------------------------
+
+CentOS Configuration
+
+Download CentOS 7.7 from https://archive.kernel.org/centos-vault/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso
+
+Mandatory Install CentOS Components;
+
+- Select Miniumal Install or GNOME Desktop
+Seletect Add-ons
+- Select Compatibility Libraries 
+- Select Development Tool
+- System Administration Tools
+
+Single Partions to of 110 GB is fine, this Arcsight will install in /opt/arcsight folder. 
+Create Partions; 
+
+/opt  > minimum 50 GB (This is checked by the install script.)
+/tmp  > minimum  6 GB (This is checked by the install script.)
+/swap = double memory
+
+- Ignore IPV6 
+- Enable DHCP/Static
+- Setup NTP Time
+- Set Hostname
+#---------------------------------------------------------------------------------------------------
+Login as root
+#---------------------------------------------------------------------------------------------------
+Configure IP Address
+nmtui edit enp0s31f6
+#---------------------------------------------------------------------------------------------------
+copy ArcSight-logger-7.0.1.8316.0.bin and license file to /tmp
+#---------------------------------------------------------------------------------------------------
+Stop CentOS Updater. (Do not update / upgrade this install.)
+systemctl stop packagekit 
+systemctl disable packagekit
+#---------------------------------------------------------------------------------------------------
+sudo yum install -y tzdata
+sudo yum install -y fontconfig \ dejavu-sans-fonts
+sudo yum install -y unzip  
+sudo yum install -y nano
+#---------------------------------------------------------------------------------------------------
+Manager Host Name Resolution
+Before ESM installation, make sure that the host machine's hostname is resolvable,
+otherwise, Manager setup will not complete successfully. Use ping to verify the
+hostname, and fix any issues to avoid errors during Manager setup.
+
+Mapping 127.0.0.1 to localhost
+Make sure that the IP address 127.0.0.1 is resolved to localhost in the /etc/hosts file,
+otherwise, the ESM installation will fail. This applies to IPv4 and IPv6 systems.
+#---------------------------------------------------------------------------------------------------
+// Set HOSTNAME, you can change the IP Address, but you can NEVER change the HOSTNAME after ESM Install
+sudo cat > /etc/hosts << EOF
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.1.1 hostname hostanme.localdomain
+EOF
+#---------------------------------------------------------------------------------------------------
+sudo cat /etc/sysconfig/network << EOF
+HOSTNAME=myserver
+EOF
+#---------------------------------------------------------------------------------------------------
+hostnamectl set-hostname mysever
+#---------------------------------------------------------------------------------------------------
+Check NTP
+timedatectl status
+timedatectl set-ntp true
+#---------------------------------------------------------------------------------------------------
+sudo systemctl disable firewalld
+sudo systemctl stop firewalld
+sudo systemctl status firewalld
+#---------------------------------------------------------------------------------------------------
+Prerequisites for Installation
+
+groupadd –g 750 arcsight
+useradd –m –g arcsight –u 1500 arcsight
+pwd arcsight
+chown -R arcsight:arcsight /opt/arcsight/
+#---------------------------------------------------------------------------------------------------
+
+// Increase default user process limit
+nano /etc/security/limits.d/20-nproc.conf
+// delete all connets in file and add the follwing
+* soft nproc 10240
+* hard nproc 10240
+* soft nofile 65536
+* hard nofile 65536
+// then log out and verify open files 65536 / max user processes 10240
+ 
+ulimit -a
+#---------------------------------------------------------------------------------------------------
+
+// modify login.conf .. RemoveIPC=no
+ 
+nano /etc/systemd/logind.conf
+cd /etc/systemd
+systemctl restart systemd-logind.service
+unset DISPLAY
+reboot
+#---------------------------------------------------------------------------------------------------
+#echo "LOGIN into CONSOLE as arcsight and run installer in local console"
+su arcsight {Confirme - you must run this install as arcsight in console}
+chmod +x ArcSightESMSuite.bin
+./ArcSight-logger-7.0.1.8316.0.bin -i console
+or 
+./ArcSight-logger-7.0.1.8316.0.bin, for GUI mode, if you are using X Window.)
+#---------------------------------------------------------------------------------------------------
+loggerd start
+loggerd stop
+loggerd restart
+loggerd status
+loggerd quit
+#---------------------------------------------------------------------------------------------------
+./UninstallerData/Uninstall_ArcSight_Logger_7.0.1
+#---------------------------------------------------------------------------------------------------
+//Set the hostname of the Logger Ip address and hostaneme in local hosts file
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors &> /dev/null &
+https://logger:443
+
+// Access 
+Update c:\Windows\System32\Drivers\etc\hosts
+https://logger:443
+type 'thisisunsafe'
+
+Username: admin
+Password: password
+##---------------------------------------------------------------------------------------------------
+Receiving Events and Logs
+Logger comes preconfigured with several receivers such as syslog servers, NFS, CIFS, or SAN systems.
+Enabled by default;
+
+UDP receiver;
+The UDP receiver is on port 514/udp for Logger Appliances. For non-root installs, it is on port 8514/udp.
+
+
+TCPreceiver;
+TCP receiver is on port 515/tcp for Logger Appliances. Logger as root, the TCP receiver is on port 515/tcp. 
+For non-root installs, it is on port 8515/tcp.
+
+Smart Message receiver;
+
+To receive events from a SmartConnector, download the SmartConnector and set the Receiver Name to be “SmartMessage Receiver” when configuring the destination. The SmartMessage receiver listens on the same port as the User Interface, 443/tcp on Logger appliances, and typically 443/tcp on Software Logger installed as root, and 9000/tcp on Software Logger installed as non-root. The Software Logger ports may vary.
+
+Logger Access Logging;
+Logger also comes pre-configured with folder follower receivers for Logger’s Apache URL Access Error log, the system Messages log, and the system Audit log (when auditing is enabled on your Linux OS). You must enable these receivers in order to use them.
+VarLogMessages:/var/log/messages
+AuditLog:/var/log/audit/audit.log
+ApacheURLAccessErrorLog:<install_dir>/userdata/logs/apache /http_error_log
+/var/log/audit/audit.log
+/var/log/messages
+/opt/arcsight/userdata/logs/apache
+/http_error_log
+
+Before enabling these receivers, you must make /var/log/audit/audit.log and /var/log/messages readable by the non-root user you installed with or specified during Logger installation
+
 ##---------------------------------------------------------------------------------------------------
 /opt/arcsight/logger/current/arcsight/logger/run
 ##---------------------------------------------------------------------------------------------------
