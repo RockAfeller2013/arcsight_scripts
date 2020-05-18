@@ -150,19 +150,23 @@ For non-root installs, it is on port 8515/tcp.
 
 Smart Message receiver;
 
-To receive events from a SmartConnector, download the SmartConnector and set the Receiver Name to be “SmartMessage Receiver” when configuring the destination. The SmartMessage receiver listens on the same port as the User Interface, 443/tcp on Logger appliances, and typically 443/tcp on Software Logger installed as root, and 9000/tcp on Software Logger installed as non-root. The Software Logger ports may vary.
+To receive events from a SmartConnector, download the SmartConnector and set the Receiver Name to be “SmartMessage Receiver” 
+when configuring the destination. The SmartMessage receiver listens on the same port as the User Interface, 
+443/tcp on Logger appliances, and typically 443/tcp on Software Logger installed as root, and 9000/tcp on Software Logger 
+installed as non-root. The Software Logger ports may vary.
 
 Logger Access Logging;
-Logger also comes pre-configured with folder follower receivers for Logger’s Apache URL Access Error log, the system Messages log, and the system Audit log (when auditing is enabled on your Linux OS). You must enable these receivers in order to use them.
-VarLogMessages:/var/log/messages
-AuditLog:/var/log/audit/audit.log
-ApacheURLAccessErrorLog:<install_dir>/userdata/logs/apache /http_error_log
-/var/log/audit/audit.log
-/var/log/messages
-/opt/arcsight/userdata/logs/apache
-/http_error_log
+Logger also comes pre-configured with folder follower receivers for Logger’s Apache URL Access Error log, 
+the system Messages log, and the system Audit log (when auditing is enabled on your Linux OS). 
+You must enable these receivers in order to use them.
 
-Before enabling these receivers, you must make /var/log/audit/audit.log and /var/log/messages readable by the non-root user you installed with or specified during Logger installation
+/var/log/messages
+/var/log/audit/audit.log
+<install_dir>/userdata/logs/apache /http_error_log
+/opt/arcsight/userdata/logs/apache/http_error_log
+
+Before enabling these receivers, you must make /var/log/audit/audit.log and /var/log/messages 
+readable by the non-root user you installed with or specified during Logger installation
 
 ##---------------------------------------------------------------------------------------------------
 /opt/arcsight/logger/current/arcsight/logger/run
