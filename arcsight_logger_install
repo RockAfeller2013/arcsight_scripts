@@ -95,7 +95,8 @@ Prerequisites for Installation
 
 groupadd –g 750 arcsight
 useradd –m –g arcsight –u 1500 arcsight
-pwd arcsight
+passwd arcsight
+mkdir /opt/arcsight
 chown -R arcsight:arcsight /opt/arcsight/
 #---------------------------------------------------------------------------------------------------
 
