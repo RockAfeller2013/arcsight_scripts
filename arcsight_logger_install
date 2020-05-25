@@ -2,6 +2,7 @@
 # Refer to full details Installation Guide, although it is pretty straight forward.
 # Download the software - https://pdapi-web-pro.microfocus.com/evalportal/try.do?productNumber=TH017M&revision=1.0
 # Download 90 Day Trial Software - https://www.microfocus.com/products/siem-log-management/free-trial
+# Read ArcSight Logger in 2 Hours - https://community.microfocus.com/t5/ArcSight-User-Discussions/Arcsight-Logger-in-2-Hours-Updated-to-Version-7-0-Release/td-p/1584515
 # NB:This is not a script, this is only a list of commands. 
 # COPY and PASTE into LINUX Console has some issues, so always type the command straight into LINUX Console.
 ##---------------------------------------------------------------------------------------------------
