@@ -1,6 +1,7 @@
 # Quick Instrustions to install ArcSight Logger 7.0.1 in a Lab Environment on CentOS 7.7
 # Refer to full details Installation Guide, although it is pretty straight forward.
 # Download the software - https://pdapi-web-pro.microfocus.com/evalportal/try.do?productNumber=TH017M&revision=1.0
+# Download 90 Day Trial Software - https://www.microfocus.com/products/siem-log-management/free-trial
 # NB:This is not a script, this is only a list of commands. 
 # COPY and PASTE into LINUX Console has some issues, so always type the command straight into LINUX Console.
 ##---------------------------------------------------------------------------------------------------
