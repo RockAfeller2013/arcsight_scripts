@@ -9,7 +9,7 @@ Login as User/Arcsight
 ./ArcSight-7.14.0.8241.0-Connector-Linux64.bin
 Select Test user
 ##---------------------------------------------------------------------------------------------------
-
+Create Events Folder and put all .Events files inside here
 To modify service configuration, you must be running as root 
 
 To manually configure, log on as root and execute the following script: 
