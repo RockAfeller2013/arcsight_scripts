@@ -47,9 +47,12 @@ systemctl stop packagekit
 systemctl disable packagekit
 #---------------------------------------------------------------------------------------------------
 sudo yum install -y tzdata
-sudo yum install -y fontconfig \ dejavu-sans-fonts
+sudo yum install -y fontconfig dejavu-sans-fonts
 sudo yum install -y unzip  
 sudo yum install -y nano
+#---------------------------------------------------------------------------------------------------
+Only required for headless installs without GUI install componets as above;
+yum -y install lvm2 zip unzip xev xauth fontconfig dejavu-sans-fonts mdadm bind-utils psmisc pciutils lsof sysstat
 #---------------------------------------------------------------------------------------------------
 Manager Host Name Resolution
 Before ESM installation, make sure that the host machine's hostname is resolvable,
