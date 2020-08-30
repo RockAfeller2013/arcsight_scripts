@@ -29,7 +29,10 @@ choco install -y powerpoint.viewer
 choco install -y visioviewer2016
 choco install -y vlc
 choco install -y vmware-workstation-player
+choco install -y obs-studio
 ##---------------------------------------------------------------------------------------------------
+Install DELL Support Assist - https://www.dell.com/support/contents/en-au/article/product-support/self-support-knowledgebase/software-and-downloads/supportassist
+Instal Geforce Expereince
 Install Office
 Install Visio
 ##---------------------------------------------------------------------------------------------------
