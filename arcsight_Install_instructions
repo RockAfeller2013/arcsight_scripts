@@ -246,4 +246,14 @@ https://avinetworks.com/docs/18.2/how-to-tie-a-system-to-a-specific-update/
 https://access.redhat.com/solutions/98873
 https://access.redhat.com/solutions/238533
 #---------------------------------------------------------------------------------------------------
-
+# UPGRADE to 7.3
+# Read Documenation - https://www.microfocus.com/documentation/arcsight/arcsight-esm-7.3/ESM_Upgrade_HTML5/ESM_UpgradeGuide.htm
+# tzdata package - https://www.microfocus.com/documentation/arcsight/arcsight-esm-7.3/ESM_Upgrade_HTML5/ESM_UpgradeGuide.htm#Preparing/Pre_Upgrade_Tasks.htm?Highlight=tzdata
+# Required TZData package for RHEL 7.7 or CentOS 7.7	tzdata-2020a-1.el7.noarch.rpm
+# https://centos.pkgs.org/7/centos-x86_64/tzdata-2020a-1.el7.noarch.rpm.html
+# 
+ 
+rpm -q tzdata
+wget http://mirror.centos.org/altarch/7/os/aarch64/Packages/tzdata-2020a-1.el7.noarch.rpm 
+sudo rpm -Uvh tzdata-2020a-1.el7.noarch.rpm 
+sudp timedatectl time-zone Australia/Sydney
