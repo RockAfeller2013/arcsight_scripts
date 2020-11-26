@@ -256,4 +256,6 @@ https://access.redhat.com/solutions/238533
 rpm -q tzdata
 wget http://mirror.centos.org/altarch/7/os/aarch64/Packages/tzdata-2020a-1.el7.noarch.rpm 
 sudo rpm -Uvh tzdata-2020a-1.el7.noarch.rpm 
-sudp timedatectl time-zone Australia/Sydney
+sudo timedatectl time-zone Australia/Sydney
+./ArcSightESMSuite.bin
+/opt/arcsight/manager/bin/setup_services.sh
