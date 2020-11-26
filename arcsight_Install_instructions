@@ -14,6 +14,9 @@ You must have the followig minium specs on your VMware environment or other Virt
 CentOS Configuration
 
 Download CentOS 7.6 from http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso
+Check MD5; 
+Windows: CertUtil -hashfile <path to file> MD5
+Linuyx: md5sum
 
 Mandatory Install CentOS Components;
 
