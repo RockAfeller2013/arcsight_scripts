@@ -7,6 +7,7 @@
 # Install Tools
 # VMware Tools 
 Set-ExecutionPolicy AllSigned
+Set-ExecutionPolicy Unrestricted
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 choco install -y classic-shell
 choco install -y bginfo
@@ -32,6 +33,7 @@ choco install -y vmware-workstation-player
 choco install -y obs-studio
 ##---------------------------------------------------------------------------------------------------
 choco install wireshark
+git clone https://github.com/fireeye/flare-vm
 ##---------------------------------------------------------------------------------------------------
 Install DELL Support Assist - https://www.dell.com/support/contents/en-au/article/product-support/self-support-knowledgebase/software-and-downloads/supportassist
 Instal Geforce Expereince
@@ -96,6 +98,8 @@ Windows Services - https://www.windowsafg.com/win10services.html
 ## Optmize Services and Features 
 
 net stop wuauserv
+sc config WinDefend start= disabled
+sc stop WinDefend
 sc config wuauserv start= disabled
 sc config Power start= disabled 
 sc configiSCSI start= disabled
