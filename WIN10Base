@@ -31,6 +31,8 @@ choco install -y vlc
 choco install -y vmware-workstation-player
 choco install -y obs-studio
 ##---------------------------------------------------------------------------------------------------
+choco install wireshark
+##---------------------------------------------------------------------------------------------------
 Install DELL Support Assist - https://www.dell.com/support/contents/en-au/article/product-support/self-support-knowledgebase/software-and-downloads/supportassist
 Instal Geforce Expereince
 Install Office
