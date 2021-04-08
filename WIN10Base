@@ -1,4 +1,5 @@
 ##---------------------------------------------------------------------------------------------------
+# Microsoft Windows Images - https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
 # Windows 10 Base Image
 # https://virtualizationandstorage.wordpress.com/?s=SOE
 # https://virtualizationandstorage.wordpress.com/2014/01/16/windows-2012-r2-soe/
@@ -32,10 +33,16 @@ choco install -y vlc
 choco install -y vmware-workstation-player
 choco install -y obs-studio
 ##---------------------------------------------------------------------------------------------------
+## DFIR Tools install, FireEye FlareVM, CommandoVM, SANs SIFT
+##---------------------------------------------------------------------------------------------------
+
 choco install wireshark
 git clone https://github.com/fireeye/flare-vm
-.\install.ps1 -profile_file profile.json -password
+.\install.ps1 -profile_file profile.json -password -norestart
 'You may throttled by the repo's, so when it stalls, chance your public IP, by quick reboot of your NTU. as per https://github.com/fireeye/flare-vm/issues/351
+'Install-BoxStarterPackage -PackageName flarevm.installer.flare -DisableReboots
+cinst x64dbg
+cup all
 ##---------------------------------------------------------------------------------------------------
 Install DELL Support Assist - https://www.dell.com/support/contents/en-au/article/product-support/self-support-knowledgebase/software-and-downloads/supportassist
 Instal Geforce Expereince
