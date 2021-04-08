@@ -34,6 +34,8 @@ choco install -y obs-studio
 ##---------------------------------------------------------------------------------------------------
 choco install wireshark
 git clone https://github.com/fireeye/flare-vm
+.\install.ps1 -profile_file profile.json -password
+'You may throttled by the repo's, so when it stalls, chance your public IP, by quick reboot of your NTU. as per https://github.com/fireeye/flare-vm/issues/351
 ##---------------------------------------------------------------------------------------------------
 Install DELL Support Assist - https://www.dell.com/support/contents/en-au/article/product-support/self-support-knowledgebase/software-and-downloads/supportassist
 Instal Geforce Expereince
