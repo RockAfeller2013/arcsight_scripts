@@ -33,10 +33,16 @@ choco install -y vlc
 choco install -y vmware-workstation-player
 choco install -y obs-studio
 ##---------------------------------------------------------------------------------------------------
-## DFIR Tools install, FireEye FlareVM, CommandoVM, SANs SIFT
-##---------------------------------------------------------------------------------------------------
+## DFIR Tools install, FireEye FlareVM, CommandoVM, SANs SIFT, AutoSpy, Sleuth Kit
 
+wget https://github.com/sleuthkit/autopsy/releases/download/autopsy-4.18.0/autopsy-4.18.0-64bit.msi
+wget https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.10.2/sleuthkit-4.10.2-win32.zip
+unzip sleuthkit-4.10.2-win32.zip
+msiexec.exe /i "autopsy-4.18.0-64bit.msi" /qn
+##---------------------------------------------------------------------------------------------------
 choco install wireshark
+##---------------------------------------------------------------------------------------------------
+wget http://boxstarter.org/package/url?https://raw.githubusercontent.com/fireeye/flare-vm/master/flarevm_malware.ps1
 git clone https://github.com/fireeye/flare-vm
 .\install.ps1 -profile_file profile.json -password -norestart
 'You may throttled by the repo's, so when it stalls, chance your public IP, by quick reboot of your NTU. as per https://github.com/fireeye/flare-vm/issues/351
