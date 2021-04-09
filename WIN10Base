@@ -32,6 +32,8 @@ choco install -y visioviewer2016
 choco install -y vlc
 choco install -y vmware-workstation-player
 choco install -y obs-studio
+choco install -y rsat
+choco install -y x64dbg.portable
 ##---------------------------------------------------------------------------------------------------
 ## DFIR Tools install, FireEye FlareVM, CommandoVM, SANs SIFT, AutoSpy, Sleuth Kit
 
