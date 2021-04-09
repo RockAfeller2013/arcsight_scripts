@@ -54,6 +54,16 @@ git clone https://github.com/fireeye/flare-vm
 cinst x64dbg
 cup all
 ##---------------------------------------------------------------------------------------------------
+Install BoomBox with Cuckoo
+Packer
+Vagrant
+Virtual Box
+setx VAGRANT_HOME "E:\data\vagrant" /M
+setx VAGRANT_HOME "E:\data\vagrant" 
+wget https://github.com/nbeede/BoomBox
+./build.ps1 -ProviderName virtualbox -VagrantOnly
+
+##---------------------------------------------------------------------------------------------------
 Install DELL Support Assist - https://www.dell.com/support/contents/en-au/article/product-support/self-support-knowledgebase/software-and-downloads/supportassist
 Instal Geforce Expereince
 Install Office
