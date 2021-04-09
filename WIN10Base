@@ -71,7 +71,9 @@ vboxmanage list systemproperties | grep folder
 git clone https://github.com/nbeede/BoomBox
 ./build.ps1 -ProviderName virtualbox -VagrantOnly
 
-
+type vagrant_up_sandbox.log
+##---------------------------------------------------------------------------------------------------
+https://docs.microsoft.com/en-us/windows/wsl/install-win10
 ##---------------------------------------------------------------------------------------------------
 Install DELL Support Assist - https://www.dell.com/support/contents/en-au/article/product-support/self-support-knowledgebase/software-and-downloads/supportassist
 Instal Geforce Expereince
