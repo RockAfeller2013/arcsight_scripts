@@ -54,10 +54,11 @@ git clone https://github.com/fireeye/flare-vm
 cinst x64dbg
 cup all
 ##---------------------------------------------------------------------------------------------------
-Install BoomBox with Cuckoo
-Packer
-Vagrant
-Virtual Box
+## Install BoomBox with Cuckoo
+## Packer
+## Vagrant
+## Virtual Box
+
 setx VAGRANT_HOME "E:\data\vagrant" /M
 setx VAGRANT_HOME "E:\data\vagrant" 
 setx PATH "E:\Program Files\VirtualBox"
@@ -66,7 +67,8 @@ https://stackoverflow.com/questions/17240725/setx-doesnt-append-path-to-system-p
 
 vboxmanage setproperty machinefolder E:\data\VM
 vboxmanage list systemproperties | grep folder
-wget https://github.com/nbeede/BoomBox
+
+git clone https://github.com/nbeede/BoomBox
 ./build.ps1 -ProviderName virtualbox -VagrantOnly
 
 
