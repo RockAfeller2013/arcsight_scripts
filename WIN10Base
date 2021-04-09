@@ -69,6 +69,12 @@ vboxmanage setproperty machinefolder E:\data\VM
 vboxmanage list systemproperties | grep folder
 
 git clone https://github.com/nbeede/BoomBox
+
+'Edit build.pst and set the locations of Packer.exe and VBoxManage.exe
+
+[string]$PackerPath = 'C:\ProgramData\chocolatey\lib\packer\tools\packer.exe',
+$VBoxManage = "E:\Program Files\Oracle\VirtualBox\vBoxManage.exe"
+
 ./build.ps1 -ProviderName virtualbox -VagrantOnly
 
 type vagrant_up_sandbox.log
