@@ -60,8 +60,15 @@ Vagrant
 Virtual Box
 setx VAGRANT_HOME "E:\data\vagrant" /M
 setx VAGRANT_HOME "E:\data\vagrant" 
+setx PATH "E:\Program Files\VirtualBox"
+setx PATH "E:\Program Files\VirtualBox" /M
+https://stackoverflow.com/questions/17240725/setx-doesnt-append-path-to-system-path-variable/17247259
+
+vboxmanage setproperty machinefolder E:\data\VM
+vboxmanage list systemproperties | grep folder
 wget https://github.com/nbeede/BoomBox
 ./build.ps1 -ProviderName virtualbox -VagrantOnly
+
 
 ##---------------------------------------------------------------------------------------------------
 Install DELL Support Assist - https://www.dell.com/support/contents/en-au/article/product-support/self-support-knowledgebase/software-and-downloads/supportassist
