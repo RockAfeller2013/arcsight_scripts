@@ -42,6 +42,8 @@ msiexec.exe /i "autopsy-4.18.0-64bit.msi" /qn
 ##---------------------------------------------------------------------------------------------------
 choco install wireshark
 ##---------------------------------------------------------------------------------------------------
+https://github.com/fireeye/commando-vm
+##---------------------------------------------------------------------------------------------------
 wget http://boxstarter.org/package/url?https://raw.githubusercontent.com/fireeye/flare-vm/master/flarevm_malware.ps1
 git clone https://github.com/fireeye/flare-vm
 .\install.ps1 -profile_file profile.json -password -norestart
