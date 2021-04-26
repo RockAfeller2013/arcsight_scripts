@@ -56,6 +56,9 @@ git clone https://github.com/fireeye/flare-vm
 cinst x64dbg
 cup all
 ##---------------------------------------------------------------------------------------------------
+## Install Windows Debugging Tools for Windows (WinDbg, KD, CDB, NTSD)
+https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/time-travel-debugging-overview
+##---------------------------------------------------------------------------------------------------
 ## Install BoomBox with Cuckoo
 ## Packer
 ## Vagrant
